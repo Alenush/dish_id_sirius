@@ -44,6 +44,7 @@ def main():
                 expected_conditions.presence_of_element_located(
                 (By.CSS_SELECTOR, ".ingredientItemH2")))
         except:
+            print('no-category')
             continue
 
         # Переходим по найденной ссылке на категорию
@@ -60,6 +61,7 @@ def main():
             num_recipes = int(ttl_recipes.text.split()[-1])
         except:
             driver.get(BASE)
+            print('less than 40 recipes')
             continue
         print(f"Рецептов в категории: {num_recipes}")
 
